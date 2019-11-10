@@ -38,7 +38,7 @@ class AboutPage extends StatelessWidget {
               _buildSocialsRow(
                   "https://facebook.com",
                   "https://instagram.com/insanitywanted",
-                  "https://github.com/codequant"),
+                  "https://github.com/"),
               Divider(
                 color: Colors.black12,
               ),
@@ -49,12 +49,10 @@ class AboutPage extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.all(16.0),
                 child: Text(
-                    "I love competitive programming & anime. I helped in coding the logic behind this project."),
+                    "I love competitive programming and anime. I helped in coding the logic behind this project."),
               ),
-              _buildSocialsRow(
-                  "https://facebook.com/iamankitrawat",
-                  "https://instagram.com/insanitywanted",
-                  "https://github.com/codequant"),
+              _buildSocialsRow("https://facebook.com/",
+                  "https://instagram.com/dsinghm98", "https://github.com/"),
               Divider(
                 color: Colors.black12,
               ),
@@ -65,12 +63,12 @@ class AboutPage extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.all(16.0),
                 child: Text(
-                    "Keen observer, I love traveling. I helped with logic and API."),
+                    "Keen observer, I love traveling & photography. I helped with logic and API."),
               ),
               _buildSocialsRow(
-                  "https://facebook.com/iamankitrawat",
-                  "https://instagram.com/insanitywanted",
-                  "https://github.com/codequant"),
+                  "https://facebook.com/",
+                  "https://instagram.com/avihs_rukaht_shiva",
+                  "https://www.linkedin.com/in/shiva-thakur-ba4176184"),
               SizedBox(height: 20.0),
             ],
           ),
