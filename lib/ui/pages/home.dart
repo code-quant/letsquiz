@@ -22,6 +22,7 @@ class HomePage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
+                        //App Title - LetsQuiz
                         Text(
                           "Lets Quiz",
                           style: TextStyle(
@@ -29,6 +30,8 @@ class HomePage extends StatelessWidget {
                               fontWeight: FontWeight.w700,
                               fontSize: 35.0),
                         ),
+
+                        //About Developer Icon
                         Builder(
                           builder: (context) => IconButton(
                               icon: Icon(Icons.info),
@@ -41,6 +44,8 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
+
+                //Do you know? card widget
                 SliverToBoxAdapter(
                   child: Padding(
                       padding: const EdgeInsets.symmetric(
@@ -49,6 +54,7 @@ class HomePage extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: <Widget>[
+                            //Do you know bulb Icon
                             SizedBox(
                               width: 50,
                               height: 50,
@@ -60,6 +66,8 @@ class HomePage extends StatelessWidget {
                             SizedBox(
                               width: 10.0,
                             ),
+
+                            //Do you know Text
                             Expanded(
                               child: RichText(
                                 text: TextSpan(
@@ -84,6 +92,8 @@ class HomePage extends StatelessWidget {
                         color: color6,
                       )),
                 ),
+
+                //Choose category Text
                 SliverToBoxAdapter(
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
@@ -97,6 +107,8 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
+
+                //Category card options widget
                 SliverPadding(
                   padding: const EdgeInsets.all(16.0),
                   sliver: SliverGrid(

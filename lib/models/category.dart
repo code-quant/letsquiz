@@ -2,8 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:letsquiz/ui/colors.dart';
 
 class Category {
+  //Category Id - Every category have unique id
   final int id;
+  //Category Name
   final String name;
+  //Category  Color
   final Color color;
   Category(this.id, this.name, this.color);
 }
