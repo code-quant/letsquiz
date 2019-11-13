@@ -90,22 +90,16 @@ class QuizFinishedPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  RaisedButton(
+                  FlatButton(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 16.0, vertical: 20.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
                     color: primaryColor,
                     child: Text("Goto Home"),
                     onPressed: () => Navigator.pop(context),
                   ),
-                  RaisedButton(
+                  FlatButton(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 16.0, vertical: 20.0),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
                     color: accentColor,
                     child: Text("Check Answers"),
                     onPressed: () {

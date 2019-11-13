@@ -26,9 +26,7 @@ class HomePage extends StatelessWidget {
                         Text(
                           "Lets Quiz",
                           style: TextStyle(
-                              color: Colors.black87,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 35.0),
+                              fontWeight: FontWeight.w700, fontSize: 35.0),
                         ),
 
                         //About Developer Icon
@@ -36,7 +34,7 @@ class HomePage extends StatelessWidget {
                           builder: (context) => IconButton(
                               icon: Icon(Icons.info),
                               iconSize: 30.0,
-                              color: Colors.grey,
+                              color: Color(0x99394668),
                               onPressed: () =>
                                   Navigator.of(context).pushNamed('/about')),
                         )
@@ -101,9 +99,7 @@ class HomePage extends StatelessWidget {
                     child: Text(
                       "Select a category to start the quiz",
                       style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16.0),
+                          fontWeight: FontWeight.w500, fontSize: 16.0),
                     ),
                   ),
                 ),

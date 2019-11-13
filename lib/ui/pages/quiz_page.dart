@@ -99,8 +99,8 @@ class _QuizPageState extends State<QuizPage> {
                   Expanded(
                     child: Container(
                       alignment: Alignment.bottomCenter,
-                      child: ButtonTheme(
-                        minWidth: double.infinity,
+                      child: SizedBox(
+                        width: double.infinity,
                         height: 60,
                         child: FlatButton(
                           textColor: Colors.white,

@@ -42,6 +42,14 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
               widget.category.name,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
             ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 5.0),
+              child: Container(
+                color: primaryColor.withOpacity(0.8),
+                height: 4,
+                width: 30,
+              ),
+            ),
             SizedBox(height: 30.0),
             Text("Select Total Number of Questions"),
             SizedBox(height: 10.0),
@@ -50,48 +58,43 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
               child: Wrap(
                 alignment: WrapAlignment.center,
                 runAlignment: WrapAlignment.center,
-                runSpacing: 16.0,
-                spacing: 16.0,
+                runSpacing: 21.0,
+                spacing: 21.0,
                 children: <Widget>[
                   SizedBox(width: 0.0),
                   ActionChip(
                     label: Text("10"),
                     labelStyle: TextStyle(color: Colors.white),
-                    backgroundColor: _noOfQuestions == 10
-                        ? accentColor
-                        : Colors.grey.shade400,
+                    backgroundColor:
+                        _noOfQuestions == 10 ? accentColor : actionChipDisabled,
                     onPressed: () => _selectNumberOfQuestions(10),
                   ),
                   ActionChip(
                     label: Text("20"),
                     labelStyle: TextStyle(color: Colors.white),
-                    backgroundColor: _noOfQuestions == 20
-                        ? accentColor
-                        : Colors.grey.shade400,
+                    backgroundColor:
+                        _noOfQuestions == 20 ? accentColor : actionChipDisabled,
                     onPressed: () => _selectNumberOfQuestions(20),
                   ),
                   ActionChip(
                     label: Text("30"),
                     labelStyle: TextStyle(color: Colors.white),
-                    backgroundColor: _noOfQuestions == 30
-                        ? accentColor
-                        : Colors.grey.shade400,
+                    backgroundColor:
+                        _noOfQuestions == 30 ? accentColor : actionChipDisabled,
                     onPressed: () => _selectNumberOfQuestions(30),
                   ),
                   ActionChip(
                     label: Text("40"),
                     labelStyle: TextStyle(color: Colors.white),
-                    backgroundColor: _noOfQuestions == 40
-                        ? accentColor
-                        : Colors.grey.shade400,
+                    backgroundColor:
+                        _noOfQuestions == 40 ? accentColor : actionChipDisabled,
                     onPressed: () => _selectNumberOfQuestions(40),
                   ),
                   ActionChip(
                     label: Text("50"),
                     labelStyle: TextStyle(color: Colors.white),
-                    backgroundColor: _noOfQuestions == 50
-                        ? accentColor
-                        : Colors.grey.shade400,
+                    backgroundColor:
+                        _noOfQuestions == 50 ? accentColor : actionChipDisabled,
                     onPressed: () => _selectNumberOfQuestions(50),
                   ),
                 ],
@@ -112,9 +115,8 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
                   ActionChip(
                     label: Text("Any"),
                     labelStyle: TextStyle(color: Colors.white),
-                    backgroundColor: _difficulty == null
-                        ? accentColor
-                        : Colors.grey.shade400,
+                    backgroundColor:
+                        _difficulty == null ? accentColor : actionChipDisabled,
                     onPressed: () => _selectDifficulty(null),
                   ),
                   ActionChip(
@@ -122,7 +124,7 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
                     labelStyle: TextStyle(color: Colors.white),
                     backgroundColor: _difficulty == "easy"
                         ? accentColor
-                        : Colors.grey.shade400,
+                        : actionChipDisabled,
                     onPressed: () => _selectDifficulty("easy"),
                   ),
                   ActionChip(
@@ -130,7 +132,7 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
                     labelStyle: TextStyle(color: Colors.white),
                     backgroundColor: _difficulty == "medium"
                         ? accentColor
-                        : Colors.grey.shade400,
+                        : actionChipDisabled,
                     onPressed: () => _selectDifficulty("medium"),
                   ),
                   ActionChip(
@@ -138,7 +140,7 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
                     labelStyle: TextStyle(color: Colors.white),
                     backgroundColor: _difficulty == "hard"
                         ? accentColor
-                        : Colors.grey.shade400,
+                        : actionChipDisabled,
                     onPressed: () => _selectDifficulty("hard"),
                   ),
                 ],
@@ -148,8 +150,8 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
             Center(
               child: processing
                   ? CircularProgressIndicator()
-                  : ButtonTheme(
-                      minWidth: double.infinity,
+                  : SizedBox(
+                      width: double.infinity,
                       height: 60,
                       child: FlatButton(
                         color: primaryColor,

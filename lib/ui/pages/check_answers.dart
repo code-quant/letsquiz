@@ -43,8 +43,9 @@ class CheckAnswersPage extends StatelessWidget {
     if (index == questions.length) {
       return Padding(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 4),
-        child: ButtonTheme(
+        child: SizedBox(
           height: 60,
+          width: double.infinity,
           child: FlatButton(
             color: primaryColor,
             textColor: Colors.white,
