@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:letsquiz/ui/colors.dart';
+import 'package:letsquiz/ui/colors.dart' as prefix0;
 import 'ui/pages/about.dart';
 import 'ui/pages/home.dart';
 
@@ -22,12 +24,22 @@ class MyApp extends StatelessWidget {
 
       //Default Theme Style for whole app
       theme: ThemeData(
-        accentColor: Colors.pink,
-        fontFamily: "GoogleSans",
-        buttonTheme: ButtonThemeData(textTheme: ButtonTextTheme.primary),
-      ),
-
-      // home: HomePage(),
+          accentColor: Colors.pink,
+          fontFamily: "GoogleSans",
+          textTheme: TextTheme(
+            body1: TextStyle(color: darkText),
+          ),
+          buttonTheme: ButtonThemeData(
+            textTheme: ButtonTextTheme.primary,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            buttonColor: primaryColor,
+          ),
+          chipTheme: ChipTheme.of(context).copyWith(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(8))),
+          )),
     );
   }
 }
