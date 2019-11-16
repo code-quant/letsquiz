@@ -10,116 +10,111 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: lightBackground,
-        body: Stack(
-          children: <Widget>[
-            CustomScrollView(
-              physics: BouncingScrollPhysics(),
-              slivers: <Widget>[
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 30.0),
+        body: CustomScrollView(
+          physics: BouncingScrollPhysics(),
+          slivers: <Widget>[
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 16.0, vertical: 30.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    //App Title - LetsQuiz
+                    Text(
+                      "Lets Quiz",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w700, fontSize: 35.0),
+                    ),
+
+                    //About Developer Icon
+                    Builder(
+                      builder: (context) => IconButton(
+                          icon: Icon(Icons.info),
+                          iconSize: 30.0,
+                          color: aboutButton,
+                          onPressed: () =>
+                              Navigator.of(context).pushNamed('/about')),
+                    )
+                  ],
+                ),
+              ),
+            ),
+
+            //Do you know? card widget
+            SliverToBoxAdapter(
+              child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 16.0, vertical: 8.0),
+                  child: _buildContentCard(
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
-                        //App Title - LetsQuiz
-                        Text(
-                          "Lets Quiz",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w700, fontSize: 35.0),
+                        //Do you know bulb Icon
+                        SizedBox(
+                          width: 50,
+                          height: 50,
+                          child: SvgPicture.asset(
+                            'assets/images/bulb.svg',
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 10.0,
                         ),
 
-                        //About Developer Icon
-                        Builder(
-                          builder: (context) => IconButton(
-                              icon: Icon(Icons.info),
-                              iconSize: 30.0,
-                              color: Color(0x99394668),
-                              onPressed: () =>
-                                  Navigator.of(context).pushNamed('/about')),
-                        )
+                        //Do you know Text
+                        Expanded(
+                          child: RichText(
+                            text: TextSpan(
+                                text: 'Do You Know?\n',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                    fontFamily: "GoogleSans"),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text:
+                                        'Playing quiz everyday can increase your brain power and cognition.',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                                  )
+                                ]),
+                          ),
+                        ),
                       ],
                     ),
-                  ),
-                ),
+                    color: color6,
+                  )),
+            ),
 
-                //Do you know? card widget
-                SliverToBoxAdapter(
-                  child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 16.0, vertical: 8.0),
-                      child: _buildContentCard(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: <Widget>[
-                            //Do you know bulb Icon
-                            SizedBox(
-                              width: 50,
-                              height: 50,
-                              child: SvgPicture.asset(
-                                'assets/images/bulb.svg',
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 10.0,
-                            ),
-
-                            //Do you know Text
-                            Expanded(
-                              child: RichText(
-                                text: TextSpan(
-                                    text: 'Do You Know?\n',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16,
-                                        fontFamily: "GoogleSans"),
-                                    children: <TextSpan>[
-                                      TextSpan(
-                                        text:
-                                            'Playing quiz everyday can increase your brain power and cognition.',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                      )
-                                    ]),
-                              ),
-                            ),
-                          ],
-                        ),
-                        color: color6,
-                      )),
+            //Choose category Text
+            SliverToBoxAdapter(
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
+                child: Text(
+                  "Select a category to start the quiz",
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16.0),
                 ),
+              ),
+            ),
 
-                //Choose category Text
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20.0, vertical: 8.0),
-                    child: Text(
-                      "Select a category to start the quiz",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500, fontSize: 16.0),
-                    ),
-                  ),
+            //Category card options widget
+            SliverPadding(
+              padding: const EdgeInsets.all(16.0),
+              sliver: SliverGrid(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 1.2,
+                    crossAxisSpacing: 10.0,
+                    mainAxisSpacing: 10.0),
+                delegate: SliverChildBuilderDelegate(
+                  _buildCategoryItem,
+                  childCount: categories.length,
                 ),
-
-                //Category card options widget
-                SliverPadding(
-                  padding: const EdgeInsets.all(16.0),
-                  sliver: SliverGrid(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        childAspectRatio: 1.2,
-                        crossAxisSpacing: 10.0,
-                        mainAxisSpacing: 10.0),
-                    delegate: SliverChildBuilderDelegate(
-                      _buildCategoryItem,
-                      childCount: categories.length,
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
           ],
         ));

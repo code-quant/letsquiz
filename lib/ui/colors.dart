@@ -21,11 +21,11 @@ const primaryColor = Color(0xff3a4eed);
 //accent Color
 const accentColor = Color(0xffFF546C);
 
-//dark text colorr
+//dark text color
 const darkText = Color(0xff394668);
 
-//Action Chip Disabled
+//action chip disabled
 const actionChipDisabled = Color(0x99808080);
 
-//About Button
+//about button
 const aboutButton = Color(0x99394668);

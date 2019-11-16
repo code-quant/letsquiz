@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:letsquiz/ui/colors.dart';
-import 'package:letsquiz/ui/colors.dart' as prefix0;
+import 'package:letsquiz/ui/colors.dart';
 import 'ui/pages/about.dart';
 import 'ui/pages/home.dart';
 

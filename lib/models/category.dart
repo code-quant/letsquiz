@@ -6,7 +6,7 @@ class Category {
   final int id;
   //Category Name
   final String name;
-  //Category  Color
+  //Category Color
   final Color color;
   Category(this.id, this.name, this.color);
 }
